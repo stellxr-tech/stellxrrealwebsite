@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: black;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        /* Video Container */
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 100%;
+            overflow: hidden;
+            padding-top: 56.25%;
+            background-color: black;
+        }
+
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Video Heading */
+        .video-heading {
+            text-align: center;
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        /* Responsive Font Size for Heading */
+        @media (max-width: 768px) {
+            .video-heading {
+                font-size: 20px;
+            }
+
+            .video-container {
+                height: 600px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .video-heading {
+                font-size: 18px;
+            }
+        }
+
+        /* Main Content Container */
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding: 0 20px;
+        }
+
+        .main-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            opacity: 1;
+            transform: scale(1);
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        .main-content p {
+            flex: 0 0 100%;
+            margin-bottom: 20px;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        /* Image Section */
+        .image-section {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .image-section h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .image-section p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            margin-top: 20px;
+        }
+
+        .button-container button {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-container button:hover {
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        @media (max-width: 576px) {
+            .main-content img,
+            .button-container button {
+                width: 80px;
+                height: 80px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .responsive-image {
+                width: 50%;
+            }
+        }
+
+        /* Image Row */
+        .image-row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .image-row img {
+            width: 30%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            opacity: 1;
+            transform: scale(1);
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        .section-heading {
+            text-align: center;
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        .section-text {
+            font-size: 16px;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        /* Container for the parallax section */
+        .parallax-container {
+            position: relative;
+            overflow: hidden;
+            height: 400px;
+        }
+
+        /* Parallax background image */
+        .parallax {
+            background-image: url('https://www.theladders.com/wp-content/uploads/handshake_190617.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        /* Black overlay */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+
+        /* Text on top of the overlay */
+        .text {
+            position: relative;
+            z-index: 2;
+            color: white;
+            text-align: center;
+            padding-top: 100px;
+            font-size: 24px;
+        }
+
+        /* Responsive styles */
+        @media screen and (max-width: 768px) {
+            .text {
+                font-size: 18px;
+                padding-top: 80px;
+            }
+        }
+
+        /* Local video */
+        .local-video {
+            position: relative;
+            padding-bottom: 56.25%;
+            padding-top: 30px;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .local-video video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+
+
+
+        .container4526452 {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container4526452 .image-container {
+        flex: 1;
+        max-width: 50%;
+        padding: 20px;
+        text-align: left; /* Aligning the image to the right */
+    }
+
+    .container4526452 .image-container img {
+        max-width: 90%; /* Reduced the image width */
+        height: auto;
+    }
+
+    .container4526452 .content-container {
+        flex: 1;
+        max-width: 50%;
+        padding: 20px;
+    }
+
+    @media (max-width: 768px) {
+        .container4526452 {
+            flex-direction: column;
+        }
+
+        .container4526452 .image-container, .container4526452 .content-container {
+            max-width: 100%;
+            text-align: center; /* Center align on smaller screens */
+        }
+    }
+
+
+    .container4526452 .content-container p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #cac6c6;
+    margin-top: 15px;
+}
+
+
+
+
+
+
+.navbar22343 {
+  background-color: #343a40; /* Dark background color */
+  padding: 15px 0;
+  border-bottom: 4px solid #ff6347; /* Bottom border color */
+}
+
+.navbar22343 .navbar-brand {
+  color: #ffffff; /* Brand text color */
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.navbar22343 .navbar-nav .nav-link {
+  color: #ffffff; /* Nav links color */
+  font-size: 14px;
+  margin-left: 15px;
+  margin-right: 15px;
+  transition: color 0.3s ease;
+}
+
+.navbar22343 .navbar-nav .nav-link:hover {
+  color: #007bff; /* Hover color */
+}
+
+.navbar22343 .form-inline .form-control {
+  width: 200px; /* Search bar width */
+  border-radius: 20px; /* Search bar border radius */
+}
+
+.navbar22343 .form-inline .btn {
+  border-radius: 20px; /* Search button border radius */
+  margin-left: 10px;
+}
+       /* Custom Navbar Styles */
+       .navbar22343 {
+        background-color: #302424; /* Dark background color */
+        padding: 15px 0;
+        border-bottom: 4px solid #241717; /* Bottom border color */
+    }
+
+    .navbar22343 .navbar-brand {
+        color: #ffffff; /* Brand text color */
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .navbar22343 .navbar-toggler-icon {
+        color: #ffffff; /* Hamburger icon color */
+    }
+
+    .navbar22343 .navbar-nav .nav-link {
+        color: #ffffff; /* Nav links color */
+        font-size: 18px;
+        margin-left: 15px;
+        margin-right: 15px;
+        transition: color 0.3s ease;
+    }
+
+    .navbar22343 .navbar-nav .nav-link:hover {
+        color: #007bff; /* Hover color */
+    }
+
+    .navbar22343 .form-inline .form-control {
+        width: 250px; /* Search bar width */
+        border-radius: 25px; /* Search bar border radius */
+    }
+
+    .navbar22343 .form-inline .btn {
+        border-radius: 25px; /* Search button border radius */
+        margin-left: 10px;
+    }
+
+    /* Overriding Bootstrap default styles for hamburger icon */
+    .navbar22343 .navbar-toggler {
+        border-color: #ffffff;
+    }
+
+    .navbar22343 .navbar-toggler-icon {
+        background-color: #ffffff;
+    }
+
+    .top-bar {
+      background-color: #343a40; /* Dark background color */
+      padding: 10px 0;
+      border-bottom: 4px solid #000000; /* Bottom border color */
+  }
+
+  body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .center-heading {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .wide-card {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        max-width: 800px;
+        margin: 0 auto;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+
+    .wide-card img {
+        flex: 1;
+        max-width: 50%;
+        height: auto;
+    }
+
+    .wide-card-content {
+        flex: 1;
+        padding: 20px;
+        background-color: #f9f9f9;
+    }
+
+    .wide-card-heading {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .wide-card-text {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+        .wide-card img {
+            max-width: 100%;
+        }
+
+        .wide-card-content {
+            flex: 1;
+            padding: 15px;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    body {
+            background-color: white;
+            color: black;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+        }
+
+        .center-heading {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .wide-card {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .wide-card img {
+            flex: 1;
+            max-width: 50%;
+            height: auto;
+        }
+
+        .wide-card-content {
+            flex: 1;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .wide-card-heading {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .wide-card-text {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .top-bar {
+            background-color: #343a40;
+            padding: 15px 0;
+            border-bottom: 4px solid #ff6347;
+        }
+
+        .top-bar .navbar-brand {
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .top-bar .navbar-nav .nav-link {
+            color: #ffffff;
+            font-size: 14px;
+            margin-left: 15px;
+            margin-right: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .top-bar .navbar-nav .nav-link:hover {
+            color: #007bff;
+        }
+
+        .top-bar .form-inline .form-control {
+            width: 200px;
+            border-radius: 20px;
+        }
+
+        .top-bar .form-inline .btn {
+            border-radius: 20px;
+            margin-left: 10px;
+        }
+
+        .container4526452 {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container4526452 .image-container {
+            flex: 1;
+            max-width: 50%;
+            padding: 20px;
+            text-align: left;
+        }
+
+        .container4526452 .image-container img {
+            max-width: 90%;
+            height: auto;
+        }
+
+        .container4526452 .content-container {
+            flex: 1;
+            max-width: 50%;
+            padding: 20px;
+        }
+
+        .container4526452 .content-container p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #cac6c6;
+            margin-top: 15px;
+        }
+
+        .navbar22343 {
+            background-color: #302424;
+            padding: 15px 0;
+            border-bottom: 4px solid #241717;
+        }
+
+        .navbar22343 .navbar-brand {
+            color: #ffffff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navbar22343 .navbar-toggler-icon {
+            color: #ffffff;
+        }
+
+        .navbar22343 .navbar-nav .nav-link {
+            color: #ffffff;
+            font-size: 18px;
+            margin-left: 15px;
+            margin-right: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar22343 .navbar-nav .nav-link:hover {
+            color: #007bff;
+        }
+
+        .navbar22343 .form-inline .form-control {
+            width: 250px;
+            border-radius: 25px;
+        }
+
+        .navbar22343 .form-inline .btn {
+            border-radius: 25px;
+            margin-left: 10px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .p-4 {
+            padding: 1.5rem;
+        }
+
+        .footer {
+            background-color: #343a40;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .video-container {
+                height: 300px;
+            }
+
+            .wide-card img {
+                max-width: 100%;
+            }
+
+            .wide-card-content {
+                flex: 1;
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .video-container {
+                height: 600px;
+            }
+
+            .wide-card-heading {
+                font-size: 20px;
+            }
+
+            .wide-card-text {
+                font-size: 14px;
+            }
+        }
+
+
+
+    </style>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Responsive Video</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var video = document.querySelector('.video-container video');
+            var mobileVideoSrc = "whyudownloadthis.mp4";
+            var desktopVideoSrc = "event head (1).mp4";
+
+            function checkWindowSize() {
+                if (window.innerWidth < 768) {
+                    video.src = mobileVideoSrc;
+                    adjustImageSize(80);
+                    adjustButtonSize(20);
+                } else {
+                    video.src = desktopVideoSrc;
+                    adjustImageSize(50);
+                    adjustButtonSize(30);
+                }
+            }
+
+            function adjustImageSize(size) {
+                var image = document.querySelector('.responsive-image');
+                image.style.width = `${size}%`;
+                image.style.height = 'auto';
+            }
+
+            function adjustButtonSize(size) {
+                var buttons = document.querySelectorAll('.button-container button');
+                buttons.forEach(function (button) {
+                    button.style.width = `${size}px`;
+                    button.style.height = `${size}px`;
+                });
+            }
+
+            window.addEventListener('resize', checkWindowSize);
+            checkWindowSize();
+
+            // Image change on button click
+            var image = document.querySelector('.responsive-image');
+            var buttons = document.querySelectorAll('.button-container button');
+
+            buttons.forEach(function (button, index) {
+                button.addEventListener('click', function () {
+                    image.style.opacity = 0;
+                    image.style.transform = 'scale(0.9)';
+                    setTimeout(function () {
+                        image.src = `image${index + 1}.png`;
+                        fadeIn(image);
+                        scaleIn(image);
+                    }, 500);
+                });
+            });
+
+            function fadeIn(element) {
+                var opacity = 0;
+                var interval = setInterval(function () {
+                    if (opacity < 1) {
+                        opacity += 0.1;
+                        element.style.opacity = opacity;
+                    } else {
+                        clearInterval(interval);
+                    }
+                }, 50);
+            }
+
+            function scaleIn(element) {
+                var scale = 0.9;
+                var interval = setInterval(function () {
+                    if (scale < 1) {
+                        scale += 0.02;
+                        element.style.transform = `scale(${scale})`;
+                    } else {
+                        clearInterval(interval);
+                    }
+                }, 10);
+            }
+        });
+
+
+
+
+
+        document.addEventListener("DOMContentLoaded", function() {
+    const vibrateLink = document.getElementById('vibrate-link');
+    
+    vibrateLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Check if the browser supports the vibration API
+        if ("vibrate" in navigator) {
+            // Vibrate for 200 milliseconds
+            navigator.vibrate(200);
+        } else {
+            // Handle unsupported feature
+            alert('Vibration is not supported in your browser.');
+        }
+    });
+});
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links ul');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+});
+
+
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--js script-->
+    <script src="main.js"></script>
+    </body>
+    </html>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body style="background-color: #ffffff; color: rgb(0, 0, 0);">    <nav class="navbar navbar-expand-lg navbar22343" style="position: fixed; width: 100%; z-index: 100; top: 0;">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Stellxr</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="page2.html">Website</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="a.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="e.html">Events</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://wa.me/919037452346">Contact</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" >
+                <button class="btn btn-outline-light my-2 my-sm-0" type="submit"><i
+                        class="fas fa-search"></i>submit</button>
+            </form>
+        </div>
+    </div>
+    
+</nav>
+
+    <br><br><div class="video-container">
+        <video autoplay loop muted playsinline>
+            <source src="" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <br><br><br><div class="center-heading">
+        <h1>Upcomming Events</h1>
+    </div>
+    
+    <div class="wide-card">
+        <img src="want.png" alt="Placeholder Image">
+        <div class="wide-card-content">
+            <h2 class="wide-card-heading">Free posters</h2>
+            <p class="wide-card-text">We're thrilled to offer a special deal at our company: for every website order, receive a free poster to boost your branding and promotional efforts. Enhance your online presence and engage your audience with compelling visuals. Don't miss out—place your order today to take advantage of this limited-time offer!</p>
+        </div>
+    </div>
+<br><br>
+    <div class="wide-card">
+        <img src="want (1).png" alt="Placeholder Image">
+        <div class="wide-card-content">
+            <h2 class="wide-card-heading">Euphoria</h2>
+            <p class="wide-card-text">We're excited to announce our upcoming event! Join us for an exclusive gathering where industry experts will share insights, networking opportunities abound, and innovative ideas will be showcased. Mark your calendars and stay tuned for more details—you won't want to miss this enriching experience!</p>
+        </div>
+    </div>
+
+
+  <br><br><footer class="text-center text-lg-start bg-body-tertiary text-muted">
+    <!-- Section: Social media -->
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+      <!-- Left -->
+      <div class="me-5 d-none d-lg-block">
+    
+      </div>
+      <!-- Left -->
+  
+      <!-- Right -->
+      <div>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-google"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+  
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              <i class="fas fa-gem me-3"><img src="logoreal.png" alt="" style="height: 50px;"></i>Stellxr
+            </h6>
+            <p>
+                "We're not just in the business of technology; we're in the business of reimagining the future. Every invention is a step towards a brighter, more innovative world. Innovation is not just our mission; it's our DNA."
+            </p>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+         
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              Useful links
+            </h6>
+            <p>
+              <a href="https://wa.me/919037452346" class="text-reset">Contact</a>
+            </p>
+            <p>
+              <a href="page2.html" class="text-reset">Webdesign</a>
+            </p>
+            <p>
+              <a href="a.html" class="text-reset">About us</a>
+            </p>
+            <p>
+              <a href="e.html" class="text-reset">Events</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+            <p><i class="fas fa-home me-3"></i> Aniyaram po 670672</p>
+            <p>
+              <i class="fas fa-envelope me-3"></i>
+              tech.stellxr@gmail.com
+            </p>
+            <p><i class="fas fa-phone me-3"></i> +91 9037452346</p>
+        
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+      © 2024 Copyright:
+      <a class="text-reset fw-bold" href="index.html">stellxr   <br> version:1.00</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+
+</footer>
+    
+</body>
+
+</html>

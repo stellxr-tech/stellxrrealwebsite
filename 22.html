@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+        background-color: #ffffff;
+    }
+
+    .image-container {
+        max-width: 80%;
+        height: auto;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .image-container img {
+        max-width: 100%;
+        height: auto;
+      
+    }
+
+
+
+
+
+    h1 {
+        font-size: 2em;
+        font-weight: bold;
+        font-family: 'Arial Black', sans-serif;
+        color: #333;
+        margin-top: 20px;
+    }
+
+    p {
+        font-size: 1em;
+        color: #555;
+        line-height: 1.5;
+        margin-bottom: 20px;
+    }
+
+    .image111-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .image111-container {
+        flex: 1;
+        margin: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;transition: transform 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .image111-container:hover {
+        transform: scale(1.1);
+    }
+   
+    .image111-container img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Media query for mobile devices */
+    @media (max-width: 768px) {
+        .image111-row {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .image111-container {
+            margin: 15px 0;
+        }
+
+        .image-container{
+            margin-top: 900px;
+        }
+    }
+
+
+</style>
+</head>
+<body>
+
+<div class="image-container">
+    <h1>Responsive Image Example</h1>
+    <p>This is a responsive image aligned in the center of the page. The image will adapt to the width of the viewport.</p>
+    <img src="12423434.png" alt="Responsive Image" style="height: 100px;">
+</div>
+
+
+
+
+<div class="image111-row">
+    <div class="image111-container">
+        <img src="helio121 (2).png" alt="Image 1" style="height: 400px; width: 800px;">
+    </div>
+    <div class="image111-container">
+        <img src="helio121 (1).png" alt="Image 2">
+    </div>
+    <div class="image111-container">
+        <img src="helio121 (3).png" alt="Image 3">
+    </div>
+</div>
+</body>
+</html>

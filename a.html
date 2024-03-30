@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us</title>
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+
+  header {
+    background-color: #fff;
+    color: #333;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+  }
+
+  nav {
+    background-color: #333;
+    overflow: hidden;
+  }
+
+  nav a {
+    float: left;
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+  }
+
+  nav a:hover {
+    background-color: #555;
+    color: white;
+  }
+
+  .about-section {
+    padding: 50px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+  }
+
+  .about-section h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+
+  .about-section p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+  }
+
+  .services-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    flex-wrap: wrap;
+  }
+
+  .service {
+    flex: 1;
+    max-width: 300px;
+    text-align: center;
+    margin: 15px;
+  }
+
+  .service img {
+    width: 80%;
+    border-radius: 50%;
+    margin-bottom: 20px;
+  }
+
+  .mission-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px;
+    background-color: #fff;
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+  }
+
+  .mission-section img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+  }
+
+  .mission-content {
+    text-align: center;
+    padding: 0 50px;
+  }
+
+  .mission-content h2 {
+    font-size: 3em;
+    margin-bottom: 30px;
+  }
+
+  .mission-content p {
+    font-size: 1.5em;  
+    margin-bottom: 30px;
+  }
+
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 50px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .services-section {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .service {
+      text-align: center;
+    }
+
+    .mission-content {
+      padding: 0;
+    }
+
+    .mission-section img {
+      margin-right: 0;
+      margin-bottom: 30px;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+.navbar22343 {
+  background-color: #343a40; /* Dark background color */
+  padding: 15px 0;
+  border-bottom: 4px solid #ff6347; /* Bottom border color */
+}
+
+.navbar22343 .navbar-brand {
+  color: #ffffff; /* Brand text color */
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.navbar22343 .navbar-nav .nav-link {
+  color: #ffffff; /* Nav links color */
+  font-size: 14px;
+  margin-left: 15px;
+  margin-right: 15px;
+  transition: color 0.3s ease;
+}
+
+.navbar22343 .navbar-nav .nav-link:hover {
+  color: #007bff; /* Hover color */
+}
+
+.navbar22343 .form-inline .form-control {
+  width: 200px; /* Search bar width */
+  border-radius: 20px; /* Search bar border radius */
+}
+
+.navbar22343 .form-inline .btn {
+  border-radius: 20px; /* Search button border radius */
+  margin-left: 10px;
+}
+       /* Custom Navbar Styles */
+       .navbar22343 {
+        background-color: #302424; /* Dark background color */
+        padding: 15px 0;
+        border-bottom: 4px solid #241717; /* Bottom border color */
+    }
+
+    .navbar22343 .navbar-brand {
+        color: #ffffff; /* Brand text color */
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .navbar22343 .navbar-toggler-icon {
+        color: #ffffff; /* Hamburger icon color */
+    }
+
+    .navbar22343 .navbar-nav .nav-link {
+        color: #ffffff; /* Nav links color */
+        font-size: 18px;
+        margin-left: 15px;
+        margin-right: 15px;
+        transition: color 0.3s ease;
+    }
+
+    .navbar22343 .navbar-nav .nav-link:hover {
+        color: #007bff; /* Hover color */
+    }
+
+    .navbar22343 .form-inline .form-control {
+        width: 250px; /* Search bar width */
+        border-radius: 25px; /* Search bar border radius */
+    }
+
+    .navbar22343 .form-inline .btn {
+        border-radius: 25px; /* Search button border radius */
+        margin-left: 10px;
+    }
+
+    /* Overriding Bootstrap default styles for hamburger icon */
+    .navbar22343 .navbar-toggler {
+        border-color: #ffffff;
+    }
+
+    .navbar22343 .navbar-toggler-icon {
+        background-color: #ffffff;
+    }
+
+    .top-bar {
+      background-color: #343a40; /* Dark background color */
+      padding: 10px 0;
+      border-bottom: 4px solid #000000; /* Bottom border color */
+  }
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!--js script-->
+<script src="main.js"></script>
+</body>
+</html>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<body>
+
+<header>
+  <h1>About Stellxr</h1>
+</header>
+
+<nav class="navbar navbar-expand-lg navbar22343" style="position: fixed; width: 100%; z-index: 100; top: 0;">
+  <div class="container">
+      <a class="navbar-brand" href="index.html">Stellxr</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="page2.html">Website</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="a.html">About</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="e.html">Events</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="https://wa.me/919037452346">Contact</a>
+              </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" >
+              <button class="btn btn-outline-light my-2 my-sm-0" type="submit"><i
+                      class="fas fa-search"></i>submit</button>
+          </form>
+      </div>
+  </div>
+  
+</nav>
+
+<div class="about-section">
+  <h1>Welcome to Stellxr</h1>
+  <p>We are a leading web design, poster design, and AI company dedicated to providing innovative solutions for businesses.</p>
+</div>
+
+<div class="services-section">
+  <div class="service">
+    <img src="https://cdn.dribbble.com/users/295352/screenshots/1015226/voov_anim_anvil_01.gif" alt="Web Designing">
+    <h3>Web Designing</h3>
+    <p>We create stunning and responsive websites that help your business stand out online.</p>
+  </div>
+  <div class="service">
+    <img src="https://cdn.dribbble.com/users/1699373/screenshots/6961028/poster_gif.gif" alt="Poster Designing">
+    <h3>Poster Designing</h3>
+    <p>We design eye-catching posters and graphics to promote your brand and events effectively.</p>
+  </div>
+  <div class="service">
+    <img src="https://i.pinimg.com/originals/98/3b/63/983b63592a42295d638b4b3120df9cc8.gif" alt="AI Solutions">
+    <h3>AI Solutions</h3>
+    <p>Utilizing the latest AI technologies, we develop intelligent solutions to automate and enhance your business processes.</p>
+  </div>
+</div>
+
+<div class="mission-section">
+  <img src="https://images.pexels.com/photos/6476783/pexels-photo-6476783.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Feature Image">
+  <div class="mission-content">
+    <h2>Our Mission</h2>
+    <p>At Stellxr, our mission is to empower businesses with cutting-edge design and AI solutions to drive growth and success in the digital world.</p>
+  </div>
+</div>
+
+<section class="">
+  <div class="container text-center text-md-start mt-5">
+    <!-- Grid row -->
+    <div class="row mt-3">
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+        <!-- Content -->
+        <h6 class="text-uppercase fw-bold mb-4">
+          <i class="fas fa-gem me-3"><img src="logoreal.png" alt="" style="height: 50px;"></i>Stellxr
+        </h6>
+        <p>
+            "We're not just in the business of technology; we're in the business of reimagining the future. Every invention is a step towards a brighter, more innovative world. Innovation is not just our mission; it's our DNA."
+        </p>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+     
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+        <!-- Links -->
+        <h6 class="text-uppercase fw-bold mb-4">
+          Useful links
+        </h6>
+        <p>
+          <a href="https://wa.me/919037452346" class="text-reset">Contact</a>
+        </p>
+        <p>
+          <a href="page2.html" class="text-reset">Webdesign</a>
+        </p>
+        <p>
+          <a href="a.html" class="text-reset">About us</a>
+        </p>
+        <p>
+          <a href="e.html" class="text-reset">Events</a>
+        </p>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+        <!-- Links -->
+        <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+        <p><i class="fas fa-home me-3"></i> Aniyaram po 670672</p>
+        <p>
+          <i class="fas fa-envelope me-3"></i>
+          tech.stellxr@gmail.com
+        </p>
+        <p><i class="fas fa-phone me-3"></i> +91 9037452346</p>
+    
+      </div>
+      <!-- Grid column -->
+    </div>
+    <!-- Grid row -->
+  </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+    
+      <!-- Grid column -->
+    </div>
+    <!-- Grid row -->
+  </div>
+</section>
+<!-- Section: Links  -->
+
+<!-- Copyright -->
+<div class="text-center p-4" style="background-color: rgba(161, 90, 90, 0.05);">
+  © 2024 Copyright:
+  <a class="text-reset fw-bold" href="index.html">stellxr   <br> version:1.00</a>
+</div>
+<!-- Copyright -->
+</footer>
+
+</body>
+</html>
